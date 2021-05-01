@@ -1,0 +1,142 @@
+
+/* navigation bar syling */
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+    user-select: none;
+    background-color: rgb(228, 248, 231);
+}
+nav{
+    display: flex;
+    background-color: rgb(170, 243, 182);
+    padding: 10px;
+    border-radius: 5px;
+}
+#home{
+    margin: 11px 12px;
+}
+#home:hover{
+    color: whitesmoke;
+    cursor: pointer;
+}
+#appName{
+    margin: 4px;
+    font-family: 'Train One', cursive;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.search{
+    margin: 5px;
+    padding: 2px;
+    position: absolute;
+    right: 15px;
+}
+#searchBox{
+   height: 20px;
+   padding: 0px 10px;
+   border-radius: 5px;
+   border: 1px solid rgb(57, 216, 84);
+   user-select: text;
+}
+#searchBox:focus{
+   outline: 0;
+}
+
+/* container styling */
+.container1{
+    width: 60vw;
+    margin: 5px auto;   
+}
+#textArea{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1rem;
+    padding: 10px 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 2px solid rgb(57, 216, 84);
+    user-select: text;
+}
+#textArea:focus{
+    font-family: 'Nanum Gothic', sans-serif;
+    outline: 0;
+    border: 1px solid rgb(57, 216, 84);
+}
+#notes{
+    display: flex;
+    height: 45vh;
+    padding: 5px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgb(57, 216, 84);
+    border-bottom: 1px solid rgb(57, 216, 84);
+    /* border-radius: 10px; */
+    overflow-y: scroll;
+}
+.note{
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 30%;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid rgb(57, 216, 84);
+    background-color: white;
+    border-radius: 10px;
+}
+.content{
+    height: 185px;
+    border-top: 1px solid rgb(57, 216, 84) ;
+    border-bottom: 1px solid rgb(57, 216, 84) ;
+    overflow-y: scroll;
+    user-select: text;
+}
+#bigNotes{
+    display: none;
+    height: 70vh;
+    width: 50vw;
+    margin: auto;
+    position: absolute;
+    top: 110px;
+    left: 340px;
+    background-color: rgb(255, 255, 255);
+    border:2px solid rgb(57, 216, 84);
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px gray;
+    z-index: 10;
+}
+
+
+/* styling buttons */
+.btn{
+    border: 2px solid rgb(142, 238, 158);
+    border-radius: 5px;
+    height: 25px;
+    transition: 0.2s;
+}
+.btn:hover{
+    background-color: rgb(138, 228, 138);
+    border: 1px solid rgb(246, 163, 95);
+    outline: none;
+}
+.btn:focus{
+    outline: 1px solid rgb(246, 163, 95);
+    outline: none;
+    
+}
+#deleteNote{
+    margin-top: 6px;
+}
+
+/* styling scrollbars */
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-track{
+    background: rgb(255, 255, 255);
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(189, 189, 189);
+}
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(155, 153, 153);
+}

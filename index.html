@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sasta-Notes</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">  
+</head>
+  <body>
+    <nav id="navBar">
+      <div id="appName">sasta-Notes</div>
+      <div id="home">Home</div>
+      <div class="search">
+        <input type="text" name="search" id="searchBox" placeholder="Search notes"/>
+        <button  id="searchBtn" class="btn">search</button>
+      </div>
+    </nav>
+    <div class="container1">
+      <div id="bigNotes"></div>
+      <div class="container">
+      <h1>Add your notes from here:</h1>
+      <div id="">
+        <textarea
+          name="text"
+          id="textArea"
+          cols="100"
+          rows="5"
+          placeholder="Write your note here"
+        >
+        </textarea>
+        <button id="addNote" class="btn">Add note</button>
+      </div>
+      <h1 id="head2">Notes:</h1>
+      <div id="notes"></div>
+    </div>
+  </div>
+    <script src="JS/app.js"></script>
+  </body>
+</html>
