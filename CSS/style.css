@@ -133,6 +133,7 @@ textArea:focus{
 }
 #deleteNote{
     margin-top: 6px;
+    width: 100%;
 }
 
 /* styling scrollbars */

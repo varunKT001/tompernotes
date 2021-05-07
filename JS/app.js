@@ -1,5 +1,11 @@
 //name of the project : notes taking app
 //author : Varun kumar tiwari 
+let notes = localStorage.getItem('notes');
+let noteTitle = localStorage.getItem('title');
+
+if (notes === null || noteTitle === null){
+    localStorage.clear();
+}
 console.log('This is sasta-Notes');
 let imp = new Array(100);
 let text = document.getElementById('textAreaNote');
