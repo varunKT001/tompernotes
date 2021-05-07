@@ -64,7 +64,12 @@ nav{
     border: 2px solid rgb(57, 216, 84);
     user-select: text;
 }
-textArea:focus{
+#textAreaTitle:focus{
+    font-family: 'Nanum Gothic', sans-serif;
+    outline: 0;
+    border: 1px solid rgb(57, 216, 84);
+}
+#textAreaNote:focus{
     font-family: 'Nanum Gothic', sans-serif;
     outline: 0;
     border: 1px solid rgb(57, 216, 84);
