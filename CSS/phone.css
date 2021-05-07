@@ -1,10 +1,10 @@
-@media only screen and (max-width: 375px){
+@media only screen and (max-width: 768px){
     /* navigation bar syling */
  body{
      font-family: 'Nanum Gothic', sans-serif;
      user-select: none;
      background-color: rgb(228, 248, 231);
-     width: 375px;
+     width: 768px;
  }
  nav{
      box-sizing: border-box;
@@ -15,7 +15,7 @@
      background-color: rgb(170, 243, 182);
      padding: 10px;
      border-radius: 5px;
-     width: 95%;
+     width: 97%;
      margin-bottom: 30px;
  }
  #home{
@@ -26,7 +26,7 @@
      align-content: center;
      margin: auto;
      order: 2;
-     width: 95%;
+     width: 97%;
      display: none;
  }
  #home:hover{
@@ -43,7 +43,7 @@
      font-weight: bolder;
      font-size: 20px;
      order: 1;
-     width: 95%;
+     width: 97%;
      margin: auto;
  }
  .search{
@@ -55,7 +55,7 @@
      margin: auto;
      padding: 2px;
      order: 3;
-     width: 95%;
+     width: 97%;
      position: sticky;
  
  }
@@ -83,11 +83,11 @@
      width: inherit;
  }
  .container1{
-     width: 95%;
+     width: 97%;
      margin: 5px;   
  }
  textarea{
-     width: 95%;
+     width: 97%;
  }
  #textAreaTitle{
      font-family: 'Nanum Gothic', sans-serif;
@@ -147,7 +147,7 @@
  #bigNotes{
      display: none;
      height: 70vh;
-     width: 90%;
+     width: 95%;
      margin: auto;
      position: absolute;
      top: 50px;
