@@ -133,24 +133,24 @@ function openNote(index){
         let container = document.getElementsByClassName('container');
         let bigNote = document.getElementById('bigNotes');
         if (imp[index] === true) {
-            bigNote.innerHTML = `<div style="margin: 5px">
+            bigNote.innerHTML = `<div style="margin: 5px; height: 95%;">
             <div class="noteIndex" style="margin:5px 5px">
             <h3 class="titleHeading" style="display: inline">${titleArr[index]}</h3>
             <button class="btn" style="float: right; margin: -2px 0px" onclick="closeNote()"><span id="close" class="material-icons" style="font-size: 15px" >close</span></button>
             </div>
-            <div class="content" style="height: 355px">
+            <div class="content" style="height: 95%">
             <p class="noteText">${notesArr[index]}</p>
             </div>
             </div>`;    
             bigNote.style.border = '2px solid red';
         } 
         else {     
-            bigNote.innerHTML = `<div style="margin: 5px">
+            bigNote.innerHTML = `<div style="margin: 5px; height: 95%;">
             <div class="noteIndex" style="margin:5px 5px">
             <h3 class="titleHeading" style="display: inline">${titleArr[index]}</h3>
             <button class="btn" style="float: right; margin: -2px 0px" onclick="closeNote()"><span id="close" class="material-icons" style="font-size: 15px" >close</span></button>
             </div>
-            <div class="content" style="height: 355px">
+            <div class="content" style="height: 95%">
             <p class="noteText">${notesArr[index]}</p>
             </div>
             </div>`;

@@ -1,0 +1,200 @@
+@media only screen and (max-width: 375px){
+    /* navigation bar syling */
+ body{
+     font-family: 'Nanum Gothic', sans-serif;
+     user-select: none;
+     background-color: rgb(228, 248, 231);
+     width: 375px;
+ }
+ nav{
+     box-sizing: border-box;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background-color: rgb(170, 243, 182);
+     padding: 10px;
+     border-radius: 5px;
+     width: 95%;
+     margin-bottom: 30px;
+ }
+ #home{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     align-content: center;
+     margin: auto;
+     order: 2;
+     width: 95%;
+     display: none;
+ }
+ #home:hover{
+     color: whitesmoke;
+     cursor: pointer;
+ }
+ #appName{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     align-content: center;
+     font-family: 'Train One', cursive;
+     font-weight: bolder;
+     font-size: 20px;
+     order: 1;
+     width: 95%;
+     margin: auto;
+ }
+ .search{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     align-content: center;
+     margin: auto;
+     padding: 2px;
+     order: 3;
+     width: 95%;
+     position: sticky;
+ 
+ }
+ #searchBox{
+    height: 20px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(57, 216, 84);
+    user-select: text;
+    width: 90%;
+    margin: auto;
+ }
+ #searchBox:focus{
+    outline-color: darkgreen;
+ }
+ #searchBtn{
+     display: none;
+ }
+ h1{
+     font-size: 1rem;
+ }
+ 
+ /* container styling */
+ .container{
+     width: inherit;
+ }
+ .container1{
+     width: 95%;
+     margin: 5px;   
+ }
+ textarea{
+     width: 95%;
+ }
+ #textAreaTitle{
+     font-family: 'Nanum Gothic', sans-serif;
+     font-size: 0.8rem;
+     padding: 5px 10px;
+     margin-bottom: 5px;
+     border-radius: 10px;
+     border: 2px solid rgb(57, 216, 84);
+     user-select: text;
+ }
+ #textAreaNote{
+     font-family: 'Nanum Gothic', sans-serif;
+     font-size: 0.8rem;
+     padding: 5px 10px;
+     margin-bottom: 5px;
+     border-radius: 10px;
+     border: 2px solid rgb(57, 216, 84);
+     user-select: text;
+ }
+ #textAreaTitle:focus{
+     font-family: 'Nanum Gothic', sans-serif;
+     outline: 0;
+     border: 1px solid rgb(57, 216, 84);
+ }
+ #textAreaNote:focus{
+     font-family: 'Nanum Gothic', sans-serif;
+     outline: 0;
+     border: 1px solid rgb(57, 216, 84);
+ }
+ #notes{
+     display: flex;
+     height: 55vh;
+     padding: 5px;
+     flex-wrap: wrap;
+     border-top: 1px solid rgb(57, 216, 84);
+     border-bottom: 1px solid rgb(57, 216, 84);
+ }
+ .note{
+     word-wrap: break-word;
+     display: flex;
+     flex-direction: column;
+     height: 250px;
+     width: 100%;
+     margin: 5px;
+     padding: 5px;
+     border: 2px solid rgb(57, 216, 84);
+     background-color: white;
+     border-radius: 10px;
+ }
+ .content{
+     height: 185px;
+     border-top: 1px solid rgb(57, 216, 84) ;
+     border-bottom: 1px solid rgb(57, 216, 84) ;
+     overflow-y: scroll;
+     user-select: text;
+ }
+ #bigNotes{
+     display: none;
+     height: 70vh;
+     width: 90%;
+     margin: auto;
+     position: absolute;
+     top: 50px;
+     left: 10px;
+     background-color: rgb(255, 255, 255);
+     border:2px solid rgb(57, 216, 84);
+     border-radius: 10px;
+     z-index: 10;
+ }
+ 
+ 
+ /* styling buttons */
+ .btn{
+     border: 2px solid rgb(142, 238, 158);
+     border-radius: 5px;
+     height: 25px;
+     transition: 0.2s;
+ }
+ .btn:hover{
+     background-color: rgb(138, 228, 138);
+     border: 1px solid rgb(246, 163, 95);
+     outline: none;
+ }
+ .btn:focus{
+     outline: 1px solid rgb(246, 163, 95);
+     outline: none;
+     
+ }
+ #deleteNote{
+     margin-top: 6px;
+     width: 100%;
+ }
+ 
+ /* styling scrollbars */
+ 
+ ::-webkit-scrollbar{
+     width: 8px;
+ }
+ ::-webkit-scrollbar-track{
+     background: rgb(255, 255, 255);
+ }
+ ::-webkit-scrollbar-thumb{
+     background: rgb(189, 189, 189);
+ }
+ ::-webkit-scrollbar-thumb:hover{
+     background: rgb(155, 153, 153);
+ }
+ 
+ 
+ }
