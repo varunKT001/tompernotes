@@ -2,44 +2,59 @@
 //author : Varun kumar tiwari 
 console.log('This is sasta-Notes');
 let imp = new Array(100);
-let text = document.getElementById('textArea');
+let text = document.getElementById('textAreaNote');
+let title = document.getElementById('textAreaTitle');
 text.value = '';
+title.value = '';
 displayNotes();
 
 let btn = document.getElementById('addNote');
 btn.addEventListener('click', function (event) {
     let notes = localStorage.getItem('notes');
-    let text = document.getElementById('textArea');
-    if (notes == null) {
+    let noteTitle = localStorage.getItem('title');
+    let text = document.getElementById('textAreaNote');
+    let title = document.getElementById('textAreaTitle');
+    if (notes == null && noteTitle == null) {
         notesArr = [];
+        titleArr = [];
     }
     else {
         notesArr = JSON.parse(notes);
+        titleArr = JSON.parse(noteTitle);
     }
     if (text.value.trim().length == 0) {
         alert('Kuch to likh de re baba');
     }
+    else if (title.value.trim().length == 0) {
+        alert('Yarr title to likho!');
+    }
     else {
         notesArr.push(text.value);
+        titleArr.push(title.value);
     }
     localStorage.setItem('notes', JSON.stringify(notesArr));
+    localStorage.setItem('title', JSON.stringify(titleArr));
     text.value = '';
+    title.value = '';
     displayNotes();
 })
 function displayNotes() {
     let notes = localStorage.getItem('notes');
-    if (notes == null) {
+    let noteTitle = localStorage.getItem('title');
+    if (notes == null && noteTitle == null) {
         notesArr = [];
+        titleArr = [];
     }
     else {
         notesArr = JSON.parse(notes);
+        titleArr = JSON.parse(noteTitle);
     }
     let html = '';
     notesArr.forEach(function (element, index) {
         if (imp[index] == true) {
             html += `<div class="note" style="border: 2px solid red">
         <div class="noteIndex" style="margin-bottom: 10px">
-        <h3 style="display: inline">Note-${index + 1}</h3>
+        <h3 class="titleHeading" style="display: inline">${titleArr[index]}</h3>
         <button class="btn" style="float: right; margin-bottom: 5px" onclick="openNote(${index})"><span id="close" class="material-icons" style="; font-size: 15px">open_in_full</span></button>
         <button class="btn" style="float: right; margin-bottom: 5px; margin-right: 2px" onclick="changeToImp(${index})" ondblclick="removeImp(${index})"><span id="imp" class="material-icons" style="; font-size: 15px">label_important</span></button>
         </div>
@@ -53,7 +68,7 @@ function displayNotes() {
         else {
             html += `<div class="note">
         <div class="noteIndex" style="margin-bottom: 10px">
-        <h3 style="display: inline">Note-${index + 1}</h3>
+        <h3 class="titleHeading" style="display: inline">${titleArr[index]}</h3>
         <button class="btn" style="float: right; margin-bottom: 5px" onclick="openNote(${index})"><span id="close" class="material-icons" style="; font-size: 15px">open_in_full</span></button>
         <button class="btn" style="float: right; margin-bottom: 5px; margin-right: 2px" onclick="changeToImp(${index})" ondblclick="removeImp(${index})"><span id="imp" class="material-icons" style="; font-size: 15px">label_important</span></button>
         </div>
@@ -65,7 +80,7 @@ function displayNotes() {
         `;
         }
     });
-    if (notesArr.length != 0) {
+    if (notesArr.length != 0 && titleArr.length != 0) {
         document.getElementById('notes').innerHTML = html;
     }
     else {
@@ -75,9 +90,13 @@ function displayNotes() {
 }
 function deleteNote(index) {
     let notes = localStorage.getItem('notes');
+    let title = localStorage.getItem('title');
     let notesArr = JSON.parse(notes);
+    let titleArr = JSON.parse(title);
     notesArr.splice(index, 1);
+    titleArr.splice(index, 1);
     localStorage.setItem('notes', JSON.stringify(notesArr));
+    localStorage.setItem('title', JSON.stringify(titleArr));
     displayNotes();
     if (imp[index] === true) {
         removeImp(index);
@@ -90,7 +109,8 @@ searchBox.addEventListener('input', function () {
     let note = document.getElementsByClassName('note');
     Array.from(note).forEach(function (element) {
         let noteText = element.getElementsByTagName('p')[0].innerText;
-        if (noteText.includes(searchText)) {
+        let titleText = element.getElementsByTagName('h3')[0].innerText;
+        if (noteText.includes(searchText) || titleText.includes(searchText)) {
             element.style.display = 'block';
         }
         else {
@@ -100,14 +120,16 @@ searchBox.addEventListener('input', function () {
 })
 function openNote(index){
         let notes = localStorage.getItem('notes');
+        let noteTitle = localStorage.getItem('title');
         let notesArr = JSON.parse(notes);
+        let titleArr = JSON.parse(noteTitle);
         
         let container = document.getElementsByClassName('container');
         let bigNote = document.getElementById('bigNotes');
         if (imp[index] === true) {
             bigNote.innerHTML = `<div style="margin: 5px">
             <div class="noteIndex" style="margin:5px 5px">
-            <h3 style="display: inline">Note-${index + 1}</h3>
+            <h3 class="titleHeading" style="display: inline">${titleArr[index]}</h3>
             <button class="btn" style="float: right; margin: -2px 0px" onclick="closeNote()"><span id="close" class="material-icons" style="font-size: 15px" >close</span></button>
             </div>
             <div class="content" style="height: 355px">
@@ -119,7 +141,7 @@ function openNote(index){
         else {     
             bigNote.innerHTML = `<div style="margin: 5px">
             <div class="noteIndex" style="margin:5px 5px">
-            <h3 style="display: inline">Note-${index + 1}</h3>
+            <h3 class="titleHeading" style="display: inline">${titleArr[index]}</h3>
             <button class="btn" style="float: right; margin: -2px 0px" onclick="closeNote()"><span id="close" class="material-icons" style="font-size: 15px" >close</span></button>
             </div>
             <div class="content" style="height: 355px">
